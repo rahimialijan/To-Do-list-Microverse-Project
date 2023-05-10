@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(183, 164, 164, 0.986);
+}
+
+.list-container {
+  background-color: #fff;
+  width: 45%;
+  height: auto;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bi-journal-text {
+  font-size: 5rem;
+  color: rgb(29, 125, 185);
+  margin: 15px auto;
+}
+
+#list-heading {
+  font-size: 1.9rem;
+  color: rgba(74, 71, 71, 0.747);
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+#list-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#todo-form {
+  width: 90%;
+}
+
+#input-list {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid gray;
+}
+
+#input-list::placeholder {
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  width: 90%;
+  font-size: 15px;
+  height: 38px;
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid gray;
+  margin-top: 10px;
+}
+
+.checkbox {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.edit {
+  position: absolute;
+  font-size: 1.2rem;
+  color: green;
+  right: 40px;
+  cursor: pointer;
+}
+
+.delete {
+  position: absolute;
+  font-size: 1.2rem;
+  color: red;
+  right: 5px;
+  cursor: pointer;
+}
+
+#edit-form {
+  outline: none;
+  border: 2px solid green;
+}
+
+.edit-list {
+  width: 100%;
+  background-color: aquamarine;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#clear-btn {
+  width: 80%;
+  padding: 12px;
+  margin: 15px auto;
+  background-color: rgb(186, 185, 185);
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+span {
+  margin-left: 15px;
+  font-size: 20px;
+}
