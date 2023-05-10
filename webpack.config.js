@@ -6,13 +6,13 @@ module.exports = {
   entry: './src/index.js',
   mode: 'development',
   devServer: {
-    open: true
+    open: true,
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
@@ -24,7 +24,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
     }),
-  ]
+  ],
 };
