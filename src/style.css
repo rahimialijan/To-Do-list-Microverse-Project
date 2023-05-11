@@ -106,6 +106,10 @@ ul li {
   cursor: pointer;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 #clear-btn {
   width: 80%;
   padding: 12px;
@@ -115,9 +119,4 @@ ul li {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-span {
-  margin-left: 15px;
-  font-size: 20px;
 }
