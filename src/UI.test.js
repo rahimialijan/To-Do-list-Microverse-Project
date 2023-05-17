@@ -41,4 +41,5 @@ describe('UI class', () => {
       expect(mockElement.appendChild).toHaveBeenCalledWith(expect.any(Element));
     });
   });
+  
 });
