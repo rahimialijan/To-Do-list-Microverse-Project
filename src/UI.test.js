@@ -41,7 +41,7 @@ describe('UI class', () => {
       expect(mockElement.appendChild).toHaveBeenCalledWith(expect.any(Element));
     });
   });
-  
+
   describe('deletetodoTask', () => {
     test('should remove a task from the list', () => {
       // Create a mock delete button element
@@ -55,14 +55,13 @@ describe('UI class', () => {
           },
         },
       };
-  
+
       // Call the deletetodoTask function
       UI.deletetodoTask(deleteButton);
-  
+
       // Verify that the correct methods were called
       expect(deleteButton.classList.contains).toHaveBeenCalledWith('bi-trash3-fill');
       expect(deleteButton.parentElement.parentElement.remove).toHaveBeenCalled();
     });
   });
-  
 });
