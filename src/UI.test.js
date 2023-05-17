@@ -1,4 +1,4 @@
-import UI from './modules/UI.js';
+import UI from './modules/ui.js';
 
 // Mock localStorage
 jest.mock('./modules/localstorage.js', () => ({

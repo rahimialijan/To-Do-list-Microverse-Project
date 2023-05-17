@@ -1,5 +1,5 @@
 import './style.css';
-import UI from './modules/UI.js';
+import UI from './modules/ui.js';
 import Store from './modules/localstorage.js';
 import Todostatus from './modules/toDoStatus.js';
 
