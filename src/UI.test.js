@@ -42,4 +42,27 @@ describe('UI class', () => {
     });
   });
   
+  describe('deletetodoTask', () => {
+    test('should remove a task from the list', () => {
+      // Create a mock delete button element
+      const deleteButton = {
+        classList: {
+          contains: jest.fn(() => true), // Mock the `contains` method to always return `true`
+        },
+        parentElement: {
+          parentElement: {
+            remove: jest.fn(), // Mock the `remove` method
+          },
+        },
+      };
+  
+      // Call the deletetodoTask function
+      UI.deletetodoTask(deleteButton);
+  
+      // Verify that the correct methods were called
+      expect(deleteButton.classList.contains).toHaveBeenCalledWith('bi-trash3-fill');
+      expect(deleteButton.parentElement.parentElement.remove).toHaveBeenCalled();
+    });
+  });
+  
 });
