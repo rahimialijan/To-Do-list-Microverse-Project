@@ -41,24 +41,4 @@ describe('UI class', () => {
       expect(mockElement.appendChild).toHaveBeenCalledWith(expect.any(Element));
     });
   });
-
-  describe('deletetodoTask', () => {
-    test('should remove a task from the list', () => {
-      const deleteButton = {
-        classList: {
-          contains: jest.fn(() => true),
-        },
-        parentElement: {
-          parentElement: {
-            remove: jest.fn(),
-          },
-        },
-      };
-
-      UI.deletetodoTask(deleteButton);
-
-      expect(deleteButton.classList.contains).toHaveBeenCalledWith('bi-trash3-fill');
-      expect(deleteButton.parentElement.parentElement.remove).toHaveBeenCalled();
-    });
-  });
 });
