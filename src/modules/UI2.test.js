@@ -50,8 +50,6 @@ describe('UI', () => {
     });
 
     test('should remove the task when delete button is clicked', () => {
-      // Create a sample ToDo task
-      // const todo = new ToDo('Task 1');
       const li = document.createElement('li');
       const deleteButton = document.createElement('span');
       deleteButton.classList.add('delete');
