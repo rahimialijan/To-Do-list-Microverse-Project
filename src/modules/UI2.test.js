@@ -51,18 +51,16 @@ describe('UI', () => {
 
     test('should remove the task when delete button is clicked', () => {
       const li = document.createElement('li');
-      const deleteButton = document.createElement('span');
-      deleteButton.classList.add('delete');
-      deleteButton.innerHTML = '<i class="bi bi-trash3-fill"></i>';
-      li.appendChild(deleteButton);
+      li.innerHTML = `<span class="delete"><i class="bi bi-trash3-fill"></i></span>`;
       list.appendChild(li);
-
+    
       // Call the function to delete the task
-      UI.editeToDoTask(deleteButton);
-
+      UI.editeToDoTask(li.querySelector('.delete'));
+    
       // Check if the task is removed from the list
       expect(list.innerHTML).not.toContain('<li>');
     });
+    
   });
 
   describe('clearFields', () => {
