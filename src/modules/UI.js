@@ -2,15 +2,15 @@ import ToDo from './toDo.js';
 import Store from './localstorage.js';
 
 class UI {
-  static taskCompleted = () => {
-    const tasks = Store.gettodoTasks();
-    tasks.forEach((todo) => UI.addTaskToList(todo));
-  };
+    static displayToDoList=() => {
+      const tasks = Store.gettodoTasks();
+      tasks.forEach((todo) => UI.addTaskToList(todo));
+    }
 
   static getNewToDoTask = () => {
     const inputTask = document.querySelector('#input-list').value;
 
-    // Validation for empty form
+    // valitation for empy form
     if (inputTask !== '') {
       const todo = new ToDo(inputTask);
 
@@ -20,7 +20,7 @@ class UI {
 
       UI.clearFields();
     }
-  };
+  }
 
   static addTaskToList = (todo) => {
     const list = document.querySelector('#list-item');
@@ -51,43 +51,39 @@ class UI {
     li.appendChild(deleteButton);
 
     if (todo.completed) {
-      li.classList.add('completed');
+      li.childNodes[1].classList.add('completed');
     }
 
     list.appendChild(li);
-  };
+  }
 
   static editeToDoTask = (element) => {
-    const listItem = element.closest('li');
-    const spanEl = listItem.querySelector('span');
-    const mainValue = spanEl.textContent;
-
+    const mainValue = element.parentElement.parentElement.childNodes[1].textContent;
     const editForm = document.createElement('form');
-    editForm.id = 'edit-form';
-    const inputField = document.createElement('input');
-    inputField.type = 'text';
-    inputField.classList.add('edit-list');
-    inputField.value = mainValue;
-    editForm.appendChild(inputField);
+    editForm.id = 'todo-form';
+    element.parentElement.parentElement.childNodes[1].innerHTML = `
 
-    spanEl.replaceWith(editForm);
+    <form id="edit-form">
+        <input type="text" class="edit-list" value="${mainValue}">
+    </form>
 
-    listItem.classList.add('highlight');
+    `;
+
+    element.parentElement.parentElement.classList.add('highlight');
 
     if (element.classList.contains('bi-trash3-fill')) {
-      listItem.remove();
+      element.parentElement.parentElement.remove();
     }
-  };
+  }
 
   static deletetodoTask = (element) => {
     if (element.classList.contains('bi-trash3-fill')) {
-      element.closest('li').remove();
+      element.parentElement.parentElement.remove();
     }
-  };
+  }
 
   static clearFields = () => {
     document.querySelector('#input-list').value = '';
-  };
+  }
 }
-
 export default UI;

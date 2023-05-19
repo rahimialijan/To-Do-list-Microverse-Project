@@ -4,7 +4,7 @@ import Store from './modules/localstorage.js';
 import Todostatus from './modules/toDoStatus.js';
 
 // Event for Displaying the to do tasks
-document.addEventListener('DOMContentLoaded', UI.taskCompleted);
+document.addEventListener('DOMContentLoaded', UI.displayToDoList);
 
 // Event for adding new to do tasks
 document.querySelector('#todo-form').addEventListener('keypress', (e) => {

@@ -49,7 +49,7 @@ body {
 
 #input-list {
   width: 100%;
-  height: 32px;
+  height: 30px;
   margin-bottom: 20px;
   border: none;
   border-bottom: 2px solid gray;
@@ -57,7 +57,7 @@ body {
 
 #input-list::placeholder {
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 ul li {
@@ -117,6 +117,6 @@ ul li {
   background-color: rgb(186, 185, 185);
   font-size: 20px;
   border: none;
-  border-radius: 4.5px;
+  border-radius: 4px;
   cursor: pointer;
 }
