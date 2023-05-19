@@ -44,7 +44,6 @@ describe('UI', () => {
       // Call the function to edit the task
       UI.editeToDoTask(editButton);
 
-      // Check if the task description is replaced with an input field
       const inputField = li.querySelector('input.edit-list');
       expect(inputField).toBeDefined();
     });
