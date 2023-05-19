@@ -1,19 +1,16 @@
-import UI from './UI';
-import ToDo from './toDo';
+import UI from './UI.js';
+import ToDo from './toDo.js';
 import Store from './localstorage.js';
-
 
 // Mock the localStorage object
 const mockLocalStorage = {
   gettodoTasks: jest.fn(),
-  addtodoTask: jest.fn()
+  addtodoTask: jest.fn(),
 };
 
-jest.mock('./localstorage', () => {
-  return {
-    default: mockLocalStorage
-  };
-});
+jest.mock('./localstorage', () => ({
+  default: mockLocalStorage,
+}));
 
 describe('UI', () => {
   let list;
@@ -54,7 +51,7 @@ describe('UI', () => {
 
     test('should remove the task when delete button is clicked', () => {
       // Create a sample ToDo task
-      const todo = new ToDo('Task 1');
+      // const todo = new ToDo('Task 1');
       const li = document.createElement('li');
       const deleteButton = document.createElement('span');
       deleteButton.classList.add('delete');
@@ -74,17 +71,11 @@ describe('UI', () => {
     test('should clear the input field value', () => {
       // Set an initial value for the input field
       input.value = 'Task 1';
-
-      // Call the function to clear the input field
       UI.clearFields();
-
-      // Check if the input field value is cleared
       expect(input.value).toBe('');
     });
   });
 });
-
-
 
 // Mocking the Store class
 jest.mock('./localstorage.js');
@@ -107,7 +98,6 @@ describe('UI', () => {
         <ul id="list-item"></ul>
       `;
 
-      // Calling the displayToDoList method
       UI.taskCompleted();
 
       // Getting the updated DOM
