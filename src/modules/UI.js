@@ -10,7 +10,7 @@ class UI {
   static getNewToDoTask = () => {
     const inputTask = document.querySelector('#input-list').value;
 
-    // Validation for empty form
+    // Validation for empty forml  
     if (inputTask !== '') {
       const todo = new ToDo(inputTask);
 
